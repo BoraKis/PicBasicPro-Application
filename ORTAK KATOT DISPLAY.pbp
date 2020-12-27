@@ -1,0 +1,27 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : Bora KİS                                          *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 5.05.2019                                         *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+TRISB=0
+DISPLAY VAR PORTB
+SAYMA VAR BYTE
+SAYI VAR BYTE
+SAYMA=0
+
+DONGU:
+GOSUB DONUSTURME
+DISPLAY=SAYI
+SAYMA=SAYMA+1
+PAUSE 500
+GOTO DONGU
+
+DONUSTURME:
+LOOKUP SAYMA,[$3F,$06,$5B,$4F,$66,$6D,$7D,$07,$7F,$6F],SAYI
+RETURN
+END
