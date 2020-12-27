@@ -1,0 +1,50 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : Bora KİS                                          *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 30.03.2019                                        *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+i VAR BYTE
+BUTON1 VAR PORTA.1
+BUTON2 VAR PORTA.3
+gecikme var WORD
+LEDLER VAR PORTB
+
+BUTON1=0 : BUTON2=0
+gecikme=250
+TRISB=0
+TRISA=%01010
+
+DONGU1:
+FOR i=0 to 255
+POKE LEDLER, i
+PAUSE gecikme
+BUTON1=0 : BUTON2=0
+IF BUTON1 GOSUB DONGU2
+IF BUTON2 GOSUB DONGU3
+ENDIF
+ENDIF
+NEXT i
+GOTO DONGU
+
+DONGU2:
+gecikme=gecikme+10
+BUTON1=0 : PAUSE 100
+IF gecikme>1000 THEN
+gecikme=1000
+ENDIF
+GOTO DONGU2
+
+DONGU3:
+gecikme=gecikme-10
+BUTON2=0 : PAUSE 100
+IF gecikme<20 Then
+gecikme=20
+endIF
+GOTO DONGU3
+END
+
