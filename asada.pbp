@@ -1,0 +1,20 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : Bora KİS                                          *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 16.03.2019                                        *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+TRISB=0
+PORTB=0
+
+BASLA:
+PORTB=%10101010
+PAUSE 1000
+PORTB=%01010101
+PAUSE 1000
+GOTO BASLA
+END
