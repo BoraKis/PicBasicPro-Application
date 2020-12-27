@@ -1,0 +1,24 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : [select VIEW...EDITOR OPTIONS]                    *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 23.03.2019                                        *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+TRISB=%00000001
+symbol TUS PORTB.0
+SYMBOL LED PORTB.1
+
+BASLA:
+IF TUS=0 THEN
+IF LED=1 THEN
+LOW LED
+ELSE
+HIGH LED
+ENDIF
+ENDIF
+GOTO BASLA
+END
