@@ -1,0 +1,40 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : Bora KİS                                          *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 20.03.2019                                        *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+ TRISC.0=0 'MOTOR
+ TRISD=0
+ TRISB=%00000111
+ MOTOR VAR PORTC.0
+ DURDURMA VAR PORTB.2
+ LEDLER VAR PORTD
+ 
+ START VAR PORTB.0
+ SENSOR VAR PORTB.1
+ MOTOR=0
+ SAYI VAR WORD   '��LEMC�YE BU KADARLIK SAYI ALANI TANIMLADIK
+ SAYI=0
+ 
+ ANA:
+ IF START=1 THEN GOSUB SAYMA
+ GOTO ANA
+ 
+ SAYMA:
+ IF SENSOR=1 THEN
+ SAYI=SAYI+1
+ LEDLER=SAYI
+ ENDIF
+ IF DURDURMA=1 THEN 
+ MOTOR=0
+ RETURN
+ ENDIF
+ GOTO SAYMA
+ 
+ 
+ 
