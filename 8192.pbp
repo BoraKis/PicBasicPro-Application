@@ -1,0 +1,27 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : Bora KİS                                          *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 16.03.2019                                        *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+TRISA=1
+TRISB=0
+PORTA=0
+PORTB=0
+SYMBOL PORTA.0=START
+SYMBOL PORTA.1=SUTOP
+
+BASLA:
+IF START=0 THEN CALIS
+PAUSE 1000
+GOTO BASLA
+CALIS:
+PORTB.0=1
+IF SUTOP=0 THEN BASLA
+PAUSE 1000
+GOTO CALIS
+END
