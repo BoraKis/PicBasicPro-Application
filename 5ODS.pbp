@@ -1,0 +1,24 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : Bora KİS                                          *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 5.05.2019                                         *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+TRISB=0
+TRISA.2=0
+DISPLAY VAR PORTB
+SAYMA VAR BYTE
+
+SAYMA=0
+PORTA.2=0
+
+DONGU:
+DISPLAY=SAYMA
+IF SAYMA=5 THEN PORTA.2=1
+SAYMA=SAYMA+1
+PAUSE 500
+GOTO DONGU
