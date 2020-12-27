@@ -1,0 +1,34 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : Bora KİS                                          *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 16.05.2019                                        *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+ADCON1=7
+DEFINE LCD_DREG PORTD
+DEFINE LCD_DBIT 4
+DEFINE LCD_EREG PORTE
+DEFINE LCD_EBIT 2
+DEFINE LCD_RWREG PORTE
+DEFINE LCD_RWBIT 1
+DEFINE LCD_RSREG PORTE
+DEFINE LCD_RSBIT 0
+DEFINE LCD_BITS 4
+DEFINE LCD_LINES 2
+TRISD=%00000000
+TRISE=%00000000
+PORTE.1=0
+PAUSE 2000
+
+ANA:
+LCDOUT $FE,$50,14,0,31,16,23,17,31,0
+LCDOUT $FE,$58,17,0,17,17,17,17,31,0
+LCDOUT $FE,$60,4,0,4,4,4,4,4,0
+LCDOUT $FE,130,"B",4,"YOMED",4,"KAL"
+LCDOUT $FE,194,"M",3,"HEND",4,"SL",4,2,4
+END
+
