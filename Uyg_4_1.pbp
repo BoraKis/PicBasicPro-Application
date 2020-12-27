@@ -1,0 +1,24 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : Bora KİS                                          *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 28.03.2019                                        *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+D VAR PORTA.1
+LED VAR PORTB.0
+TRISA=%00010
+TRISB=0
+PORTB=0
+
+D=0
+IF D=1 THEN
+HIGH LED
+PAUSE 500
+ENDIF
+LOW LED
+PAUSE 500
+END
