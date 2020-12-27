@@ -1,0 +1,26 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : Bora KİS                                          *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 23.03.2019                                        *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+TRISA=0
+TRISB=0
+PORTA=0
+PORTB=0
+
+DONGU:
+HIGH PORTB.0
+PAUSE 500
+HIGH PORTA.0
+PAUSE 500
+LOW PORTA.0
+PAUSE 500
+LOW PORTB.0
+PAUSE 500
+GOTO DONGU
+END
