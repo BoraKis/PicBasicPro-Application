@@ -1,0 +1,53 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : Bora KİS                                          *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 16.03.2019                                        *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+TRISD=0
+TRISB=%00000011
+LED1 VAR PORTD.0
+LED2 VAR PORTD.1
+LED3 VAR PORTD.2
+BUTON1 VAR PORTB.0
+BUTON2 VAR PORTB.1
+PORTD=0 'PORTLARIN TAMAMINA SIFIR G�NDERD�'
+
+ANA:
+IF BUTON1=1 THEN GOSUB ISLEM1
+IF BUTON2=1 THEN GOSUB ISLEM2
+IF BUTON1=1 AND BUTON2=1 THEN GOSUB ISLEM3
+GOTO ANA
+
+ISLEM1:
+LED1=0 : LED2=0 : LED3=0
+LED1=1
+RETURN
+
+ISLEM2:
+LED1=0 : LED2=0 : LED3=0
+LED2=1
+RETURN
+
+ISLEM3:
+LED1=0 : LED2=0 : LED3=0
+LED1=1 : LED2=1 : LED3=1
+
+PAUSE 1000
+
+RETURN
+
+
+
+
+
+
+
+
+
+
+
