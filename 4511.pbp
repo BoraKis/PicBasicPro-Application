@@ -1,0 +1,51 @@
+'****************************************************************
+'*  Name    : UNTITLED.BAS                                      *
+'*  Author  : : Bora KİS                                        *
+'*  Notice  : Copyright (c) 2019 [select VIEW...EDITOR OPTIONS] *
+'*          : All Rights Reserved                               *
+'*  Date    : 17.04.2019                                        *
+'*  Version : 1.0                                               *
+'*  Notes   :                                                   *
+'*          :                                                   *
+'****************************************************************
+TRISD=0
+TRISB=0
+DISPLAY VAR PORTB
+SAYMA VAR BYTE
+BIRLER VAR BYTE
+ONLAR VAR BYTE
+
+
+
+SAYMA=0
+
+
+
+PORTD.0=1
+PORTD.1=1
+DONGU:
+GOSUB BIRLERBASAMAK
+GOSUB ONLARBASAMAK
+SAYMA=SAYMA+1
+PAUSE 500
+
+GOTO DONGU
+
+BIRLERBASAMAK:
+PORTD.0=1
+BIRLER= SAYMA DIG 0
+PORTD.0=0
+DISPLAY=BIRLER
+PAUSE 1
+RETURN
+
+ONLARBASAMAK:
+PORTD.1=1
+ONLAR= SAYMA DIG 1
+PORTD.1=0
+DISPLAY=ONLAR
+PAUSE 1
+RETURN
+
+
+
